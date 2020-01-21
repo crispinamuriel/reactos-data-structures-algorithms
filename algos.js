@@ -18,3 +18,18 @@
 //   }
 //   return resultArr;
 // }
+//Method 2
+
+function doubleForLoop(arr) {
+  let memo = {};
+  for(let i = 0; i < arr.length; i++ ) {
+    for(let j = 0; j < arr.length; j++) {
+      if(arr[i] === arr[j] && i !== j && !memo[arr[i]]) memo[arr[i]] = true;
+    }
+  }
+  return Object.keys(memo).map(key => Number(key));
+  
+}
+
+
+doubleForLoop(arr);
