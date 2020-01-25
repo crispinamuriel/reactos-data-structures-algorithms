@@ -44,30 +44,69 @@ s: a string to repeat
 n: the number of characters to consider */
 
 // Complete the repeatedString function below.
-function repeatedString(s, n) {
-    if(n < s.length) {
-        let count = 0;
-        for(let i = 0; i < n; i++){
-         if(s[i] === 'a')count++;
+//SOLUTION:
+// function repeatedString(s, n) {
+//     if(n < s.length) {
+//         let count = 0;
+//         for(let i = 0; i < n; i++){
+//          if(s[i] === 'a')count++;
+//         }
+//         return count;
+//     }
+    
+//     let count = 0;
+    
+//     for(let i = 0; i < s.length; i++){
+//         if(s[i] === 'a') count++;
+//     }
+
+//     let repeat = Math.floor(n/s.length);
+
+//     let remainder = n % repeat;
+//     count *= repeat;
+//     console.log(remainder);
+
+//     for(let i=0; i<remainder; i++){
+//         if(s[i]=== 'a')count++
+//     }
+//     return count;
+
+// }
+
+
+//-------------------------------------------------------------------
+/*Function Description
+
+Complete the function hourglassSum in the editor below. It should return an integer, the maximum hourglass sum in the array.
+
+hourglassSum has the following parameter(s):
+
+arr: an array of integers
+https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+
+MY SOLUTION: 
+function hourglassSum(arr) {
+    let result = [];
+
+    for(let i = 0; i < 4; i++){
+        
+        for(let j =0; j < 4; j++) {
+            let sum = 0;
+            sum += arr[i][j];
+            sum += arr[i][j+1];
+            sum += arr[i][j+2];
+            sum += arr[i+1][j+1];
+            sum += arr[i+2][j];
+            sum += arr[i+2][j+1];
+            sum += arr[i+2][j+2];
+            result.push(sum);    
         }
-        return count;
-    }
-    
-    let count = 0;
-    
-    for(let i = 0; i < s.length; i++){
-        if(s[i] === 'a') count++;
+        
     }
 
-    let repeat = Math.floor(n/s.length);
-
-    let remainder = n % repeat;
-    count *= repeat;
-    console.log(remainder);
-
-    for(let i=0; i<remainder; i++){
-        if(s[i]=== 'a')count++
-    }
-    return count;
+    return Math.max(...result);
 
 }
+
+
+*/
