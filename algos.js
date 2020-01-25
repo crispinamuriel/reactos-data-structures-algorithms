@@ -107,6 +107,33 @@ function hourglassSum(arr) {
     return Math.max(...result);
 
 }
+A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, if  left rotations are performed on array , then the array would become .
 
+Given an array  of  integers and a number, , perform  left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
+
+Function Description
+
+Complete the function rotLeft in the editor below. It should return the resulting array of integers.
+
+rotLeft has the following parameter(s):
+
+An array of integers .
+An integer , the number of rotations.
+How to use shift() / unshift()
+SHIFT off an element in the front of the array
+unshift elements ONTO the front of the array
+
+https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+
+function rotLeft(a, d) {
+ let count = d;
+
+ while (count) {
+     let take = a.shift();
+     a.push(take);
+     count--;
+ }
+ return a;
+}
 
 */
