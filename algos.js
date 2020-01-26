@@ -136,4 +136,25 @@ function rotLeft(a, d) {
  return a;
 }
 
+//final solution for largest profit
+const arr = [4, 10, 3, 8, 5, 2, 9];
+
+function highestProfit (arr) {
+  let lowest = arr[0]; //4
+  let largest = arr[1]; //10
+  for(let i = 1; i < arr.length; i++) {
+    let curr = arr[i]; //3
+    if(curr < lowest && i !== arr.length -1) {
+      lowest = curr;  //3
+      largest = curr;
+      console.log( 'lowest', lowest)
+    }
+    if(curr > largest) {
+      largest = curr;
+      console.log('highest', largest)
+    }  
+  }
+  return largest - lowest;
+}
+highestProfit(arr);
 */
