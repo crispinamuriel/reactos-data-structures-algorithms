@@ -51,3 +51,17 @@ function mySlice(str, start, end) {
   
   return result;
 }
+function myIndexOf(str, tar, start = 0) {
+  let found = 1;
+  for(let i = start; i < str.length; i++) {
+    if(str[i] === tar[0]){
+      found = i
+      for(let j = 0; j < tar.length; j++) {
+        if(str[i+j] !== tar[j]) {
+          found = -1
+        }
+      }
+      return found
+    }
+  }
+}
