@@ -79,3 +79,26 @@ const myIndexOf = (str, tar, start = 0) =>{
   }
   return index;
 }
+
+const mostVowels = (str) => {
+  let vowels = 'aeiou';
+  let most = '';
+  let count = 0;
+  
+  const wordArr = str.split('.').join('').split(' ');
+  wordArr.forEach((word) => {
+    let vowelCount = 0;
+    for(let i = 0; i < word.length; i++) {
+      let letter = word[i];
+      if(vowels.includes(letter)) {
+        vowelCount++
+      }
+      if(vowelCount > count) {
+        most = word;
+        count = vowelCount;
+      }
+    }
+  });
+  
+  return most;
+}
