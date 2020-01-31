@@ -65,3 +65,17 @@ function myIndexOf(str, tar, start = 0) {
     }
   }
 }
+const myIndexOf = (str, tar, start = 0) =>{
+  let index = -1;
+  for (let i = start; i < str.length; i++) {
+   if (str[i] === tar[0]) {
+     let copy = str.slice(i, i+tar.length);
+     console.log(copy)
+     if(copy === tar) {
+       index = i;
+       return index;
+     }
+   }
+  }
+  return index;
+}
