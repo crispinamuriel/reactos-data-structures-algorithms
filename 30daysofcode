@@ -73,4 +73,19 @@ function main() {
         console.log(`${n} x ${i} = ${n * i}`);
     }
 }
-
+//day 6 Review Loops/conditionals/operators/datatypes
+function processData(input) {
+    inputArr = input.split('\n');
+    let result = '';
+    for(let j = 1; j < inputArr.length; j++){
+        let word = inputArr[j];
+        let str = '';
+        let str2 = '';
+        for (let i = 0; i < word.length; i++) {
+            if(i % 2 === 0) str += word[i];
+            if(i % 2 === 1) str2 += word[i];
+        }
+        result += str + ' ' + str2 + '\n';
+    };
+    console.log(result);
+}
