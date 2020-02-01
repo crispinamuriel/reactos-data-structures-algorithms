@@ -1,0 +1,44 @@
+const howEqual = (one, two) => {
+  if (one === two) return 'strictly';
+  if (one == two) return 'loosely';
+
+  return 'not equal';
+}
+
+const isTruthy = (el) => {
+  if(el === 0) return 'The number 0 is falsey (the only falsey number)'
+  if(el === false) return 'The boolean value false is falsey';
+  if(el === null) return 'The null value is falsey';
+  if(el === undefined) return 'undefined is falsey';
+  if(el === '') return 'The empty string is falsey (the only falsey string)';
+  if(el) return true;
+  else return false;
+}
+
+//using a switch this is supposed to be better because of readability? 
+
+const isTruthy = (el) => {
+  switch (el) {
+     case '':
+      return 'The empty string is falsey (the only falsey string)';
+      break;
+    case 0:
+      return 'The number 0 is falsey (the only falsey number)';
+      break;
+    case undefined:
+      return 'undefined is falsey';
+      break;
+    case null:
+      return 'The null value is falsey';
+      break;
+    case false:
+      return 'The boolean value false is falsey';
+      break;
+    case el:
+      return true;
+      break;
+    case null:
+      return 'The null value is falsey';
+      break;
+  }
+}
