@@ -89,3 +89,50 @@ function processData(input) {
     };
     console.log(result);
 }
+//day 7 Dictionaries
+function processData(input) {
+    const inputArr = input.split('\n');
+    const phoneBookArr = [];
+    const phoneBook = {};
+    const keys = [];
+    const queries = [];
+
+    let n = inputArr.shift();
+    // console.log(n);
+    // console.log(inputArr);
+    for(let i = 0; i < n; i++) {
+        phoneBookArr.push(inputArr[i]);
+    }
+    for(let k = n; k < phoneBookArr.length; k++) {
+        keys.push(phoneBookArr[k]);
+    }
+    phoneBookArr.join('');
+    // console.log(phoneBookArr);
+    phoneBookArr.forEach((entry, j) => {
+        let key = '';
+        let index = '';
+        for(let i = 0; i < entry.length; i++) {
+            if(entry[i] === ' ') {
+                key = entry.slice(0, i);
+                index = i;
+            }
+        }
+        // console.log(key)
+        phoneBook[key] = key+'='+entry.slice(index+1);
+    });
+    // console.log(phoneBook)
+    for(let i = n; i < inputArr.length; i++) {
+        queries.push(inputArr[i]);
+    }
+
+    queries.forEach((query) => {
+        if(phoneBook[query]){
+            console.log(phoneBook[query]);
+        }else{
+            console.log('Not found')
+        }
+    });
+
+
+
+} 
