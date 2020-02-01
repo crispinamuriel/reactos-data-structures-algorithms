@@ -89,7 +89,22 @@ function processData(input) {
     };
     console.log(result);
 }
-//day 7 Dictionaries
+//day 7 Arrays
+function main() {
+    const n = parseInt(readLine(), 10);
+
+    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    const reversedArr = arr.reverse();
+    let str = '';
+
+    reversedArr.forEach((el)=> {
+        str += el + ' ';
+    });
+
+    console.log(str.slice(0,-1));
+}
+
+//day 8 Dictionaries
 function processData(input) {
     const inputArr = input.split('\n');
     const phoneBookArr = [];
