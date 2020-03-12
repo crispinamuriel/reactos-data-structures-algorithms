@@ -41,3 +41,22 @@ function minimumNumber(n, pw) {
 
 }
  */
+
+/* Staircase
+
+function staircase(n) {
+    for (let i = 0; i < n; i++) {
+        let string = '';
+        for(let j = 0; j < n; j++) {
+            if(i < j) {
+                string += ' ';
+            } else {
+                string += '#';
+            }
+        }
+        let stringArr = string.split('').reverse();
+        console.log(stringArr.join(''));
+    }
+
+}
+*/
