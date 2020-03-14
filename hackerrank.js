@@ -60,3 +60,16 @@ function staircase(n) {
 
 }
 */
+
+//Birthday Candles
+function birthdayCakeCandles(ar) {
+    let set = new Set(ar);
+    let newArr  = Array.from(set);
+    let  target = Math.max(...newArr);
+    let candles = 0;
+
+    for(let i = 0; i < ar.length; i++) {
+        if(ar[i] === target) candles++;
+    }
+    return candles;
+}
