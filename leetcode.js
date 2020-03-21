@@ -32,3 +32,26 @@ var smallerNumbersThanCurrent = function(nums) {
     });
     return result;
 };
+
+//split-a-string-in-balanced-string
+var balancedStringSplit = function(s) {
+    s = s.split('');
+    let count = 0;
+    let balance = 0;
+    
+    while(s.length) {
+        
+         for(let i = 0; i < s.length; i++) {
+             let currEl = s[i];
+             if(currEl === 'R') balance++;
+             if(currEl === 'L') balance--;
+
+             if(balance === 0) {
+                 count++;
+                 s.splice(0, i + 1);
+                 i = -1;
+             }
+         }
+    }
+  return count;  
+};
