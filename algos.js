@@ -158,3 +158,36 @@ function highestProfit (arr) {
 }
 highestProfit(arr);
 */
+
+// max profit https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
+var maxProfit = function(prices) {
+    if(!prices.length || prices.length === 1) return 0;
+    let lowest = prices[0];
+    let highest = 0;
+    let maxProf = 0;
+    
+    for(let i = 1; i < prices.length; i++) {
+        
+        let curr = prices[i];
+        if (curr < lowest && i !== prices.length -1) {
+            lowest = curr;
+            highest = curr;
+        }
+        if(curr > highest) {
+            highest = curr;
+        }
+        
+        maxProf = Math.max(maxProf, highest-lowest);
+    }
+    if(maxProf < 0) return 0;
+    return maxProf;
+};
+
+//loop through
+//find a low
+//keep looping
+//find a higher and subtract to get profit
+//high - low = profit
+//at the end of the loop, compare highest - lowest with maxProf inside of Math.max
+//maxProf = Math.max(maxProf, highest-lowest);
+//stores new maxProf and keeps it for next loop to compare
