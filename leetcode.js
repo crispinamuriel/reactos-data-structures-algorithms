@@ -55,3 +55,17 @@ var balancedStringSplit = function(s) {
     }
   return count;  
 };
+// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/submissions/
+var numberOfSteps  = function(num) {
+    let steps = 0;
+    while (num > 0) {
+        if(num % 2 === 0) {
+            steps++;
+            num /= 2;
+        } else {
+            steps++;
+            num--;
+        }
+    }
+    return steps;
+};
