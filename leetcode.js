@@ -69,3 +69,7 @@ var numberOfSteps  = function(num) {
     }
     return steps;
 };
+
+var defangIPaddr = function(address) {
+    return address.split(".").join("[.]");
+};
