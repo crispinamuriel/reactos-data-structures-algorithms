@@ -69,7 +69,16 @@ var numberOfSteps  = function(num) {
     }
     return steps;
 };
-
+//https://leetcode.com/problems/defanging-an-ip-address/submissions/
 var defangIPaddr = function(address) {
     return address.split(".").join("[.]");
+};
+var defangIPaddr = function(address) {
+    let defanged = '';
+    for(let i = 0; i < address.length; i++) {
+        const curr = address[i];
+        if(curr === '.') defanged += '[.]';
+        else defanged += curr;
+    }
+    return defanged;
 };
