@@ -191,3 +191,34 @@ var maxProfit = function(prices) {
 //at the end of the loop, compare highest - lowest with maxProf inside of Math.max
 //maxProf = Math.max(maxProf, highest-lowest);
 //stores new maxProf and keeps it for next loop to compare
+
+//apple interview:
+const evensThenOdds = (arr) => {
+  let head = 0;
+  let tail = arr.length - 1;
+
+  while(head < tail) {
+    console.log(arr, "head:",head, "tail:", tail)
+    if(arr[head] % 2 === 0) {
+      head++;
+    }
+    if(arr[tail] % 2 === 1) {
+      tail--;
+    }
+    if(head > tail) return arr
+    if(arr[head] % 2 === 1 && arr[tail] % 2 === 0) {
+      console.log("arr[head]:", arr[head], "arr[tail]:", arr[tail])
+      const swapped = arr[tail];
+      arr[tail] = arr[head];
+      arr[head] = swapped;
+      if(head >= tail) return arr;
+      head++;
+      tail--;
+    }
+  }
+  return arr;
+}
+// while head pointer is still lower than the tail pointer
+//check if the element at the head is even, if it is move the pointer over =>
+//check if the element at the tail pointer is odd, if it is, move the pointer over <=
+/
