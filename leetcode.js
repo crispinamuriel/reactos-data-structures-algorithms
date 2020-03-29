@@ -82,3 +82,19 @@ var defangIPaddr = function(address) {
     }
     return defanged;
 };
+
+//Apple Two pointer solution
+    console.log(nums)
+     let small = 0;
+     let large = nums.length - 1;
+
+    
+     while(small <= large) {
+         let sum = nums[small] + nums[large];
+         if(sum === target) {
+             return [small, large];
+         } else if(sum < target) {
+             small++;
+         } else if (sum > target) {
+             large--;
+         }
