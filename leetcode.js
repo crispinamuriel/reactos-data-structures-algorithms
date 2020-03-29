@@ -83,6 +83,20 @@ var defangIPaddr = function(address) {
     return defanged;
 };
 
+//jems and stones
+var numJewelsInStones = function(J, S) {
+    console.log(J,S);
+    let total = 0;
+    const map = {};
+    for(let i = 0; i < J.length; i++) {
+            map[J[i]] = 1;
+    }
+    S.split('').forEach((val) => {
+        if(map[val]) total++;
+    });
+    return total;
+};
+
 //Apple Two pointer solution
     console.log(nums)
      let small = 0;
