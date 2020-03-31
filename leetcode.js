@@ -97,7 +97,7 @@ var numJewelsInStones = function(J, S) {
     return total;
 };
 
-//Apple Two pointer solution
+//Two pointer solution
     console.log(nums)
      let small = 0;
      let large = nums.length - 1;
@@ -112,3 +112,33 @@ var numJewelsInStones = function(J, S) {
          } else if (sum > target) {
              large--;
          }
+//Apple Two pointer
+        const arr = [1,2,3,4,5,6,7,8];
+
+const evensThenOdds = (arr) => {
+  let head = 0;
+  let tail = arr.length - 1;
+
+  while(head < tail) {
+    console.log(arr, "head:",head, "tail:", tail)
+    if(arr[head] % 2 === 0) {
+      head++;
+    }
+    if(arr[tail] % 2 === 1) {
+      tail--;
+    }
+    if(head > tail) return arr;
+    if(arr[head] % 2 === 1 && arr[tail] % 2 === 0) {
+      console.log("arr[head]:", arr[head], "arr[tail]:", arr[tail]);
+      const swapped = arr[tail];
+      arr[tail] = arr[head];
+      arr[head] = swapped;
+      if(head >= tail) return arr;
+      head++;
+      tail--;
+    }
+  }
+  return arr;
+}
+
+console.log(evensThenOdds(arr));
