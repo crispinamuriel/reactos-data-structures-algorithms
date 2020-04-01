@@ -222,3 +222,20 @@ const evensThenOdds = (arr) => {
 //check if the element at the head is even, if it is move the pointer over =>
 //check if the element at the tail pointer is odd, if it is, move the pointer over <=
 /
+//myFlatten
+const arr = [1,2,[[3,4]], 5, [[6]], 7, 8, [9]];
+
+const myFlatten = (arr) => {
+  let resultArr = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    if(typeof arr[i] === 'number') {
+      resultArr.push(arr[i]);
+    } else {
+      resultArr = resultArr.concat(myFlatten(arr[i]));
+    }
+  }
+  return resultArr;
+}
+
+console.log(myFlatten(arr));
