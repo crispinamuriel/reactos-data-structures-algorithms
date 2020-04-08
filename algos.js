@@ -239,3 +239,19 @@ const myFlatten = (arr) => {
 }
 
 console.log(myFlatten(arr));
+
+//two element add to target (TwoSum)
+
+var twoSum = function(nums, target) {
+    let hashMap = new Map();
+    
+    for(let i = 0; i < nums.length; i++) {
+        let compliment = target - nums[i];
+        if(hashMap.has(compliment)) {
+            return [hashMap.get(compliment), i];
+        }
+        if(!hashMap.has(nums[i])) {
+            hashMap.set(nums[i], i);
+        } 
+    }
+};
