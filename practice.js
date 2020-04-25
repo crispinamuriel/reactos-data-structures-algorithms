@@ -12,3 +12,17 @@ const indexEqualsValueSearch = () => {
 
 const answer = indexEqualsValueSearch(arr);
 console.log(answer);
+
+//redoing twoSum https://leetcode.com/problems/two-sum/submissions/
+var twoSum = function(nums, target) {
+    let hashMap = new Map;
+    
+    for(let i = 0; i < nums.length; i++) {
+        let compliment = target - nums[i];
+        if(hashMap.has(compliment)) {
+            return [hashMap.get(compliment), i];
+        } else {
+            hashMap.set(nums[i], i);
+        }
+    }
+};
