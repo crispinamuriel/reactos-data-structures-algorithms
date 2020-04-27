@@ -30,3 +30,28 @@ function sum(groceryList, myCart) {
 
 // UNCOMMENT BELOW TO TEST YOUR CODE
 console.log(`Total: $${sum(groceryList, myCart)}. Your food delivery is on its way!`); //->  Total: $60.05. Your food delivery is on its way!
+
+
+function giftCard(balance, menu) {
+  return function (deliveryArray) {
+    deliveryArray.forEach((item) => {
+      balance -= menu[item];
+    });
+    
+    if(balance > 0) {
+      return balance;
+    } else {
+      return 'Insufficient gift card balance';
+    }
+  };
+}
+
+// UNCOMMENT THESE TO TEST YOUR WORK!
+const menu = {
+  quesoFundido: 11,
+  sopaDeFrijol: 7,
+  cochinitaPibil: 15
+};
+const elEncantoDeLola = giftCard(25, menu);
+console.log(elEncantoDeLola(['sopaDeFrijol', 'cochinitaPibil'])) // should log 3
+console.log(elEncantoDeLola(['quesoFundido'])) // should log "Insufficient gift card balance"
