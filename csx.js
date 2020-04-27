@@ -23,11 +23,6 @@ function sum(groceryList, myCart) {
   
   return total;
 }
-
-
-
-
-
 // UNCOMMENT BELOW TO TEST YOUR CODE
 console.log(`Total: $${sum(groceryList, myCart)}. Your food delivery is on its way!`); //->  Total: $60.05. Your food delivery is on its way!
 
