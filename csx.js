@@ -70,3 +70,32 @@ console.log(addList("Breaking Bad", "Josh")); // ["Breaking Bad"]
 console.log(addList("Community", "Joan")); // ["Community"]
 console.log(addList("Ex Machina", "Jeff")); // ["Ex Machina"]
 console.log(addList("Better Call Saul", "Josh")); // ["Breaking Bad", "Better Call Saul"]
+
+
+function quarantineSchedule(day) {
+  day = day.toLowerCase();
+  switch(day) {
+  case 'monday':
+    return 'Read';
+    break;
+  case 'wednesday':
+    return 'Puzzles';
+    break;
+  case 'friday':
+    return 'Netflix';
+    break;
+  case 'sunday':
+    return 'Exercise';
+    break;
+  default: 
+    return 'Code';
+    
+  }
+};
+
+// UNCOMMENT THESE TO TEST YOUR CODE
+console.log(quarantineSchedule('mOnDaY')) // should log 'Read'
+console.log(quarantineSchedule('wednesday')) // should log 'Puzzles'
+console.log(quarantineSchedule('FRIDAY')) // should log 'Netflix'
+console.log(quarantineSchedule('SuNDay')) // should log 'Exercise'
+console.log(quarantineSchedule('tuesDAY')) // should log 'Code'
