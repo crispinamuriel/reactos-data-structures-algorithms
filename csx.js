@@ -50,3 +50,23 @@ const menu = {
 const elEncantoDeLola = giftCard(25, menu);
 console.log(elEncantoDeLola(['sopaDeFrijol', 'cochinitaPibil'])) // should log 3
 console.log(elEncantoDeLola(['quesoFundido'])) // should log "Insufficient gift card balance"
+
+const createList = (people) => {
+  const result = {};
+  return function(show, person){
+    if(!result[person]){
+      result[person] = new Array();
+    }
+    result[person].push(show);
+    
+    return result[person];
+  };
+}
+
+// Uncomment these to test your code!
+const people = ["Josh", "Jeff", "Joan"];
+const addList = createList(people);
+console.log(addList("Breaking Bad", "Josh")); // ["Breaking Bad"]
+console.log(addList("Community", "Joan")); // ["Community"]
+console.log(addList("Ex Machina", "Jeff")); // ["Ex Machina"]
+console.log(addList("Better Call Saul", "Josh")); // ["Breaking Bad", "Better Call Saul"]
