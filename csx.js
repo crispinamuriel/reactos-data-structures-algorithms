@@ -149,4 +149,4 @@ const exerciseMins3 = {
 // UNCOMMENT THIS TO TEST YOUR CODE
 console.log(trashDuty(exerciseMins, exerciseChecker)); // should log ['Ryan', 'Harry', 'Mike', 'Chris'];
 console.log(trashDuty(exerciseMins2, exerciseChecker)) // should log ['David', 'Ryan', 'Mike', 'Chris'];
-console.log(trashDuty(exerciseMins3, exerciseChecker)
+console.log(trashDuty(exerciseMins3, exerciseChecker)  // should log ['David', 'Ryan', 'Harry', 'Mike'];
