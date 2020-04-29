@@ -86,3 +86,16 @@ var twoSum = function(nums, target) {
         hashMap.set(value, i);
     }
 };
+//sock mechant
+function sockMerchant(n, ar) {
+    const memo = {};
+    let count = 0;
+    ar.forEach((sock) => {
+        if(memo[sock]) {
+            count++;
+            memo[sock] = 0;
+        } 
+        else memo[sock] = 1;
+    });
+    return count;
+}
