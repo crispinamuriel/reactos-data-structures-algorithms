@@ -142,3 +142,22 @@ const evensThenOdds = (arr) => {
 }
 
 console.log(evensThenOdds(arr));
+         
+         
+//Apple Flatten Nested List Iterater
+         
+var nestedIterator = function(nestedList) {
+    let result = [];
+    
+    for(let i = 0; i < nestedList.length; i++) {
+        if(typeof nestedList[i] === 'number') {
+            result.push(nestedList[i]);
+        } 
+        else {
+            result = result.concat(nestedIterator(nestedList[i]));
+        }
+    }
+    return result;
+};
+
+console.log(nestedIterator([1,[[2]],3,[4],5]));
