@@ -255,3 +255,31 @@ var twoSum = function(nums, target) {
         } 
     }
 };
+
+// all combinations of a string https://www.w3resource.com/javascript-exercises/javascript-function-exercise-3.php
+function PowerSet(inputStr) {
+    inputStr = inputStr.toLowerCase();
+    const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let array1 = [];
+    for (let x = 0, y=1; x < inputStr.length; x++,y++) {
+        array1[x]=inputStr.substring(x, y);
+    }
+    let result = [];
+    let temp= "";
+    let slent = Math.pow(2, array1.length);
+
+    for (let i = 0; i < slent ; i++){
+    
+        temp= "";
+        for (let j=0;j<array1.length;j++) {
+            if ((i & Math.pow(2,j))){ 
+                temp += array1[j];
+            }
+        }
+
+         result.push(temp);
+
+    }
+  return result.sort((a, b) => a.localeCompare(b));;
+
+}
