@@ -11,3 +11,11 @@ const useStyles = makeStyles({
     backgroundColor: '#f64141',
   },
 });
+
+//Pinterest
+//Given a matrix create a function that returns if the matrix is a valid sudoku puzzle
+
+function isValid(matrix) {
+  
+ return 'INVALID'; 
+}
