@@ -161,3 +161,38 @@ var nestedIterator = function(nestedList) {
 };
 
 console.log(nestedIterator([1,[[2]],3,[4],5]));
+         
+         
+         
+// Invert Binary tree my solution vs real solution
+         
+         //acctual solution
+         var invertTree = function(root) {
+    if (!root) {
+        return root
+    }
+    
+    let left = invertTree(root.left);
+    let right = invertTree(root.right);
+
+    root.left = right;
+    root.right = left;
+    
+    return root
+};
+         //my first solution
+         
+var invertTree = function(root, origin) {
+    if(!origin) origin = root;
+    if(!root.left) return origin;
+
+    else {
+        console.log(root);
+        let temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        console.log('after flip',root)
+        
+    }
+    return invertTree(root.left, origin) && invertTree(root.right, origin);
+};
