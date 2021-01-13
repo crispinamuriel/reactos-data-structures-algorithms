@@ -12,6 +12,34 @@ var twoSum = function(nums, target) {
     }
 };
 
+// TwoSum again
+var twoSum = function(nums, target) {
+    // get array of numbers and a target number
+    // find two numbers that add up to the target
+    // return the indecies of the two numbers that add up to the given target inside of an array
+    
+    
+    // example inputs
+    // nums = [2, 7, 11, 15] target = 9
+    
+    // Steps To Solve
+    
+    // create an object to hold key/value pairs of { key: "Number" value: index }
+    // loop through arr
+    // each value and index saved in object
+    // when we come to a value who's difference (from target) is stored we're done
+    // return [indicies] 
+
+    const dict = {};
+    let result = [];
+    nums.forEach((num, i) => {
+        const diff = target - num;
+        if (typeof dict[diff.toString()] === 'number') result = [dict[diff], i];
+        else dict[num] = i;
+    });
+    return result;
+};
+
 //https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
 //How many nums smaller
