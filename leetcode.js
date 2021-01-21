@@ -224,3 +224,46 @@ var invertTree = function(root, origin) {
     }
     return invertTree(root.left, origin) && invertTree(root.right, origin);
 };
+         
+// make a function that takes in a pos integer and returns a string but doesn't use toString
+
+// myToString(12345) => "12345"
+// myToString(0) => "0"
+
+// let integer = 12345;
+// console.log(integer % 10);
+// console.log(Math.floor(integer/10));
+// let resultString = '';
+
+// while (integer) {
+//   let tempChar = integer % 10;
+//   integer = Math.floor(integer/10);
+//   // let char = "" + integer % 10;
+//   resultString += integer % 10;
+//   // resultString = char + resultString;
+//   console.log(integer)
+// }
+
+// console.log(resultString);
+
+while (integer) {
+  let sliced = integer % 10; // 5, still a number
+  integer = Math.floor(integer/10); // 1234
+  let char = "" + sliced; // coercing 5 into str, "5"
+  resultString = char + resultString; // "5" + ""; // "4" + "5" // "3" + "45"
+}
+
+console.log(resultString);
+
+
+const myToString = (integer, str = '') => {
+  if(integer < 1) return str;
+  
+  let tempChar = integer % 10;
+  str = tempChar + str;
+  
+  return myToString(Math.floor(integer/10), str);
+  
+}
+
+console.log(myToString(12345));
