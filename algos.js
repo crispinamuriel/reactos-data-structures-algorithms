@@ -183,6 +183,23 @@ var maxProfit = function(prices) {
     return maxProf;
 };
 
+// ----------------
+// MaxProf 1 pass 
+var maxProfit = function(prices) {
+    let lowestPrice = prices[0];
+    let maxProfit = 0;
+    
+    for (let i = 0; i < prices.length; i++) {
+        const currentPrice = prices[i];
+        const profit = currentPrice - lowestPrice;
+        lowestPrice = (currentPrice < lowestPrice) ? currentPrice : lowestPrice;
+        maxProfit = (profit > maxProfit) ? profit : maxProfit;
+    }
+    
+    return maxProfit;
+};
+// --------------------------
+
 //loop through
 //find a low
 //keep looping
